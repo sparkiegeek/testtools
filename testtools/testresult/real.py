@@ -1541,6 +1541,8 @@ class ExtendedToOriginalDecorator:
         method = getattr(self.decorated, 'time', None)
         if method is None:
             return
+        if a_datetime is None:
+            return
         return method(a_datetime)
 
     def wasSuccessful(self):
