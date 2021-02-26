@@ -1539,7 +1539,7 @@ class ExtendedToOriginalDecorator(object):
 
     def time(self, a_datetime):
         method = getattr(self.decorated, 'time', None)
-        if method is None:
+        if method is None or a_datetime is None:
             return
         return method(a_datetime)
 
